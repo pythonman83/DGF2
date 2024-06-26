@@ -1,0 +1,751 @@
+/* Importation de la police Roboto depuis Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Importation de la police Press Start 2P depuis Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* Définition des variables CSS pour les polices et les couleurs */
+:root {
+    --font-primary: 'Roboto', sans-serif; /* Définition de la police principale */
+    --font-title: 'Press Start 2P', cursive; /* Définition de la police pour les titres */
+    --color-primary: #ffd700; /* Couleur dorée */
+    --color-background: rgba(0, 0, 0, 0.6); /* Fond semi-transparent noir */
+    --color-text: #fff; /* Blanc pour le texte */
+    --text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Ombre portée pour le texte */
+    --color-fond-page: linear-gradient(90deg, #2a295c,#e3865b,#8c6d1a);
+    --color-fond-th: rgba(0, 0, 0, 0.8); /* Fond noir semi-transparent */
+    --color-fond-td: rgba(0, 0, 0, 0.5); /* Fond noir semi-transparent */
+    --color-lien-telechargement: #333; /* Couleur grise */
+    --color-lien-survol: #ffd700; /* Couleur dorée */
+}
+/* Définition des variables CSS pour les polices et les couleurs */
+
+/* Définition de l'animation pour l'arrière-plan dégradé */
+@keyframes gradientAnimation {
+    0% {
+        background: linear-gradient(90deg, #2a295c, #e3865b, #8c6d1a);
+    }
+    50% {
+        background: linear-gradient(90deg, #8c6d1a, #2a295c, #e3865b);
+    }
+    100% {
+        background: linear-gradient(90deg, #2a295c, #e3865b, #8c6d1a);
+    }
+}
+
+/* Style de base pour le corps du document */
+body {
+    font-family: var(--font-primary); /* Utilisation de la police principale */
+    margin: 0; /* Suppression des marges par défaut */
+    padding: 0; /* Suppression des paddings par défaut */
+    background: var(--color-fond-page); /* Dégradé de fond */
+    color: var(--color-text); /* Couleur du texte */
+    display: flex; /* Affichage en flexbox */
+    flex-direction: column; /* Disposition des enfants en colonne */
+    min-height: 100vh; /* Hauteur minimale sur toute la hauteur de la fenêtre */
+    text-align: center; /* Alignement centré du texte */
+    animation: gradientAnimation 15s infinite; /* Application de l'animation de dégradé */
+}
+/* Style de base pour le corps du document */
+
+/* Style pour l'en-tête */
+header {
+    position: fixed; /* Position fixe en haut de la page */
+    top: 0; /* Placement en haut de la page */
+    width: 100%; /* Largeur de l'en-tête sur toute la largeur de la page */
+    background-color: var(--color-background); /* Couleur de fond */
+    padding: 20px; /* Padding interne */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Ombre portée */
+    z-index: 1000; /* Assure que l'en-tête est au-dessus des autres éléments */
+    transition: background-color 0.3s ease, padding 0.3s ease; /* Transitions pour les changements de style */
+    display: flex; /* Affichage en flexbox */
+    justify-content: space-between; /* Espace égal entre les éléments */
+    align-items: center; /* Alignement vertical des items */
+}
+/* Style pour l'en-tête */
+
+/* Styles pour le conteneur de l'en-tête et les éléments enfants */
+.header-container, .header-container .logo, header h1 {
+    display: flex; /* Affichage en flexbox */
+    align-items: center; /* Alignement vertical */
+}
+/* Styles pour le conteneur de l'en-tête et les éléments enfants */
+
+/* Style pour le logo */
+.logo {
+    height: 65px; /* Hauteur du logo */
+    margin-right: 20px; /* Marge à droite */
+}
+/* Style pour le logo */
+
+/* Style pour le titre dans l'en-tête */
+header h1 {
+    margin: 0; /* Suppression des marges */
+    font-size: 1.5em; /* Taille de la police */
+    color: var(--color-primary); /* Couleur du texte */
+    animation: fadeInDown 1s ease-in-out; /* Animation de fondu en bas */
+    text-shadow: var(--text-shadow); /* Ombre portée */
+    font-family: var(--font-title); /* Utilisation de la police de titre */
+}
+/* Style pour le titre dans l'en-tête */
+
+/* Style des liens dans le titre et la navigation */
+header h1 a, header nav ul li a {
+    color: inherit; /* Hérite de la couleur de son parent */
+    text-decoration: none; /* Pas de soulignement */
+}
+/* Style des liens dans le titre et la navigation */
+
+/* Style pour la navigation */
+header nav {
+    margin-top: 10px; /* Marge en haut */
+}
+/* Style pour la navigation */
+
+/* Style pour la liste de navigation */
+header nav ul {
+    list-style: none; /* Suppression des puces */
+    padding: 0; /* Suppression des paddings */
+    display: flex; /* Affichage en flexbox */
+    gap: 15px; /* Espace entre les éléments */
+}
+/* Style pour la liste de navigation */
+
+/* Style pour les items de la liste de navigation */
+header nav ul li {
+    margin: 0 15px; /* Marge horizontale */
+}
+/* Style pour les items de la liste de navigation */
+
+/* Style pour les liens de la liste de navigation */
+header nav ul li a {
+    font-weight: bold; /* Texte en gras */
+    transition: color 0.3s ease; /* Transition pour le changement de couleur */
+    font-family: var(--font-title); /* Utilisation de la police de titre */
+    font-size: 18px; /* Taille de la police */
+}
+/* Style pour les liens de la liste de navigation */
+
+/* Style spécifique pour l'élément d'inscription */
+header nav ul li.inscription {
+    margin-right: 60px; /* Marge à droite */
+}
+/* Style spécifique pour l'élément d'inscription */
+
+/* Style pour les liens de navigation au survol */
+header nav ul li a:hover {
+    color: var(--color-primary); /* Changement de couleur au survol */
+}
+/* Style pour les liens de navigation au survol */
+
+/* Style pour le bouton de menu toggle */
+.menu-toggle {
+    display: none; /* Caché par défaut */
+    font-size: 28px; /* Taille de la police */
+    background: none; /* Pas de fond */
+    border: none; /* Pas de bordure */
+    color: var(--color-primary); /* Couleur du texte */
+    cursor: pointer; /* Curseur main */
+    position: absolute; /* Position absolue pour un positionnement précis */
+    left: 80px; /* Placement à 80px du bord gauche */
+    top: 20px; /* Placement à 20px du bord supérieur */
+}
+/* Style pour le bouton de menu toggle */
+
+/* Media query pour les écrans de petite taille */
+@media (max-width: 768px) {
+    /* Affichage du toggle menu */
+    .menu-toggle {
+        display: block; /* Affiché en petit écran */
+    }
+
+    /* Style pour la navigation en petit écran */
+    header nav {
+        display: none; /* Caché par défaut */
+        flex-direction: column; /* Disposition verticale */
+        align-items: center; /* Alignement central */
+        background-color: rgba(0, 0, 0, 0.8); /* Fond semi-transparent */
+        position: absolute; /* Position absolue */
+        top: 100%; /* Placement sous l'en-tête */
+        width: 100%; /* Largeur sur toute la page */
+        left: 0; /* Aligné à gauche */
+        padding: 20px 0; /* Padding interne */
+    }
+
+    /* Affichage de la navigation en mode ouvert */
+    header nav.open {
+        display: flex; /* Affichage en flexbox */
+    }
+
+    /* Disposition verticale pour les items de la navigation */
+    header nav ul {
+        flex-direction: column; /* Disposition verticale */
+        gap: 10px; /* Espace entre les items */
+    }
+
+    header nav ul li {
+        margin: 0; /* Suppression des marges */
+    }
+}
+/* Media query pour les écrans de petite taille */
+
+/* Style pour les sections */
+section {
+    padding: 80px 20px 20px; /* Padding interne */
+    animation: fadeInUp 1s ease-in-out; /* Animation de fondu en haut */
+    margin-bottom: 20px; /* Marge en bas */
+    text-align: center; /* Alignement centré du texte */
+}
+/* Style pour les sections */
+
+section#video p {
+    color: var(--color-primary);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Style pour créer un effet de clignotement du texte de lien au survol */
+@keyframes blink {
+     0% {
+        color: var(--color-lien-telechargement);
+    }
+    50% {
+        color: var(--color-lien-survol);
+    }
+    100% {
+        color: var(--color-lien-telechargement);
+    }
+}
+/* Style pour créer un effet de clignotement du texte de lien au survol */
+
+section#video p a {
+    color: var(--color-lien-telechargement);
+    text-decoration: none;
+    transition: color 0.3s ease; /* Transition douce pour le changement initial */
+}
+
+section#video p a:hover {
+    animation: blink 1s infinite; /* Animation de clignotement */
+    text-decoration: none;
+}
+
+/* Styles spécifiques pour la section vidéo */
+section#video {
+    padding: 0; /* Suppression du padding */
+}
+/* Styles spécifiques pour la section vidéo */
+
+/* Style pour les vidéos dans la section vidéo */
+section#video video {
+    width: 100%; /* Largeur maximale */
+    max-width: none; /* Pas de largeur maximale */
+    border-radius: 0; /* Pas de bordure arrondie */
+    box-shadow: none; /* Pas d'ombre portée */
+}
+/* Style pour les vidéos dans la section vidéo */
+
+/* Styles pour le bouton cliquable sur la vidéo */
+.video-button {
+    position: absolute; /* Positionnement absolu pour le bouton */
+    top: 50%; /* Placement vertical au milieu */
+    left: 50%; /* Placement horizontal au milieu */
+    transform: translate(-50%, -50%); /* Centrage du bouton */
+    background-color: var(--color-primary); /* Couleur de fond du bouton */
+    color: var(--color-text); /* Couleur du texte du bouton */
+    padding: 10px 20px; /* Padding interne du bouton */
+    border: none; /* Pas de bordure */
+    border-radius: 5px; /* Bordure arrondie */
+    text-decoration: none; /* Pas de soulignement */
+    font-size: 1.2em; /* Taille de la police */
+    font-family: var(--font-title); /* Utilisation de la police de titre */
+    font-weight: bold; /* Texte en gras */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5); /* Ombre portée */
+    cursor: pointer; /* Curseur main */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transitions pour le fond et la transformation */
+}
+
+/* Style pour le bouton au survol */
+.video-button:hover {
+    background-color: #ffe033; /* Couleur de fond au survol */
+    transform: translate(-50%, -50%) scale(1.1); /* Agrandissement au survol */
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.5); /* Ombre portée */
+}
+
+
+/* Styles pour les sections spécifiques */
+section#inscription, section#programme, section#intervenants, #last-year-video {
+    background: var(--color-background); /* Fond semi-transparent */
+    padding: 40px; /* Padding interne */
+    border-radius: 10px; /* Bordure arrondie */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Ombre portée */
+    margin-bottom: 20px; /* Marge en bas */
+    width: 60%; /* Largeur de 60% */
+    margin: 0 auto 20px; /* Centré horizontalement avec une marge en bas */
+}
+/* Styles pour les sections spécifiques */
+
+section#inscription h2 {
+    color: var(--color-primary);
+}
+
+/* Style pour le formulaire d'inscription */
+section#inscription form {
+    display: flex; /* Affichage en flexbox */
+    flex-direction: column; /* Disposition verticale */
+    align-items: center; /* Alignement central */
+    background-color: #f6f8fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px 8px rgba(0, 0, 0, 0.2);
+    
+}
+/* Style pour le formulaire d'inscription */
+
+/* Style pour les inputs et boutons du formulaire d'inscription */
+section#inscription form input, section#inscription form button {
+    width: 80%; /* Largeur de 80% */
+    max-width: 400px; /* Largeur maximale de 400px */
+    padding: 10px; /* Padding interne */
+    margin: 10px 0; /* Marge verticale */
+    border: none; /* Pas de bordure */
+    border-radius: 5px; /* Bordure arrondie */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Ombre portée */
+    transition: box-shadow 0.3s ease; /* Transition pour l'ombre */
+}
+/* Style pour les inputs et boutons du formulaire d'inscription */
+
+/* Style pour les inputs et boutons du formulaire d'inscription au focus */
+section#inscription form input:focus, section#inscription form button:focus {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ombre portée au focus */
+    outline: none; /* Suppression du contour */
+}
+/* Style pour les inputs et boutons du formulaire d'inscription au focus */
+
+/* Style pour le bouton du formulaire d'inscription */
+section#inscription form button {
+    background: var(--color-primary); /* Couleur de fond */
+    color: #333; /* Couleur du texte */
+    font-size: 1.2em; /* Taille de la police */
+    cursor: pointer; /* Curseur main */
+    transition: background 0.3s ease, box-shadow 0.3s ease; /* Transitions pour le fond et l'ombre */
+}
+/* Style pour le bouton du formulaire d'inscription */
+
+/* Style pour le bouton du formulaire d'inscription au survol */
+section#inscription form button:hover {
+    background: #ffe033; /* Changement de la couleur de fond au survol */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Ombre portée au survol */
+}
+/* Style pour le bouton du formulaire d'inscription au survol */
+
+section#programme h2 {
+    color: var(--color-primary);
+}
+
+/* Styles pour le tableau de la section programme */
+section#programme table {
+    width: 100%; /* Largeur maximale */
+    border-collapse: collapse; /* Fusion des bordures */
+    margin: 20px 0; /* Marge verticale */
+}
+/* Styles pour le tableau de la section programme */
+
+/* Styles pour les cellules du tableau de la section programme */
+section#programme th, section#programme td {
+    padding: 15px; /* Padding interne */
+    border: 1px solid var(--color-primary); /* Bordure du tableau en doré */
+    color: var(--color-primary); /* Couleur des textes */
+}
+/* Styles pour les cellules du tableau de la section programme */
+
+/* Style pour l'en-tête du tableau */
+section#programme th {
+    background-color: var(--color-fond-th); /* Fond semi-transparent */
+}
+/* Style pour l'en-tête du tableau */
+
+/* Style pour les cellules du tableau */
+section#programme td {
+    background-color: var(--color-fond-td); /* Fond semi-transparent */
+}
+/* Style pour les cellules du tableau */
+
+/* Média query pour les écrans de petite taille */
+@media (max-width: 600px) {
+    /* Style pour rendre le tableau défilable horizontalement */
+    section#programme table {
+        display: block; /* Affichage en bloc */
+        overflow-x: auto; /* Défilement horizontal */
+    }
+}
+/* Média query pour les écrans de petite taille */
+
+section#intervenants h2 {
+    color: var(--color-primary);
+}
+
+/* Style pour le carrousel des intervenants */
+section#intervenants .carousel {
+    position: relative; /* Positionnement relatif */
+    overflow: hidden; /* Masquer le débordement */
+    width: 100%; /* Largeur de 100% de son conteneur */
+    border-radius: 15px; /* Bordure arrondie */
+}
+/* Style pour le carrousel des intervenants */
+
+/* Styles pour les diapositives du carrousel */
+section#intervenants .slides {
+    display: flex; /* Affichage en flexbox */
+    transition: transform 0.5s ease; /* Transition pour le déplacement des diapositives */
+    width: 100%; /* Prendre 100% de la largeur du conteneur */
+}
+/* Styles pour les diapositives du carrousel */
+
+/* Style pour chaque diapositive du carrousel */
+section#intervenants .slide {
+    flex: none; /* Pas de flex pour les diapositives */
+    width: 100%; /* Largeur de la diapositive à 100% */
+    scroll-snap-align: start; /* Alignement au début de chaque diapositive */
+    position: relative; /* Positionnement relatif */
+}
+/* Style pour chaque diapositive du carrousel */
+
+/* Styles pour les légendes des diapositives */
+.caption {
+    background-color: rgba(0, 0, 0, 0.7); /* Fond transparent */
+    color: #fff; /* Couleur du texte */
+    font-size: 18px; /* Taille de la police d'écriture */
+    padding: 10px; /* Padding interne */
+    position: absolute; /* Position absolue */
+    bottom: 0; /* Placement en bas */
+    width: 100%; /* Largeur à 100% */
+    text-align: center; /* Alignement central du texte */
+}
+/* Styles pour les légendes des diapositives */
+
+/* Styles pour les images des intervenants */
+section#intervenants img {
+    width: 100%; /* Largeur de l'image à 100% */
+    height: auto; /* Hauteur de l'image s'ajustant automatiquement */
+    display: block; /* Affichage en bloc */
+}
+/* Styles pour les images des intervenants */
+
+/* Styles pour les boutons de navigation du carrousel */
+section#intervenants .prev, section#intervenants .next {
+    position: absolute; /* Position absolue */
+    top: 50%; /* Placement vertical au milieu */
+    transform: translateY(-50%); /* Centrage vertical */
+    color: #333; /* Couleur des fléches */
+    border: none; /* Pas de bordure */
+    padding: 10px 20px; /* Padding interne */
+    font-size: 24px; /* Taille des fléches */
+    cursor: pointer; /* Changement de l'aspect du curseur au survol */
+    border-radius: 5px; /* Bordure arrondie */
+    z-index: 100; /* Assure que les boutons sont au-dessus des images */
+    background-color: var(--color-primary); /* Couleur de fond */
+    font-weight: bold; /* Texte en gras */
+}
+/* Styles pour les boutons de navigation du carrousel */
+
+/* Style pour le positionnement du bouton précédent */
+section#intervenants .prev {
+    left: 10px; /* Placement à gauche */
+}
+/* Style pour le positionnement du bouton précédent */
+
+/* Style pour le positionnement du bouton suivant */
+section#intervenants .next {
+    right: 10px; /* Placement à droite */
+}
+/* Style pour le positionnement du bouton suivant */
+
+#last-year-video p {
+    color: var(--color-primary);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Style pour créer un effet de clignotement du texte de lien au survol */
+@keyframes blink {
+    0% {
+        color: var(--color-lien-telechargement);
+    }
+    50% {
+        color: var(--color-lien-survol);
+    }
+    100% {
+        color: var(--color-lien-telechargement);
+    }
+}
+/* Style pour créer un effet de clignotement du texte de lien au survol */
+
+#last-year-video p a {
+    color: var(--color-text);
+    text-decoration: none;
+    transition: color 0.3s ease; /* Transition douce pour le changement initial */
+}
+
+#last-year-video p a:hover {
+    animation: blink 1s infinite; /* Animation de clignotement */
+    text-decoration: none;
+}
+
+/* Styles pour le titre de la vidéo de l'année précédente */
+#last-year-video h2 {
+    color: var(--color-primary);
+    margin-bottom: 20px;
+}
+/* Styles pour le titre de la vidéo de l'année précédente */
+
+/* Style pour la vidéo de l'année précédente */
+#last-year-video video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+/* Style pour la vidéo de l'année précédente */
+
+
+/* Styles spécifiques pour la section "Où nous trouver" */
+#ou-nous-trouver {
+    background: var(--color-background);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    width: 80%; /* Largeur de 80% */
+    margin: 0 auto 20px;
+}
+
+#ou-nous-trouver h2 {
+    color: var(--color-primary);
+    margin-bottom: 20px; /* Marge en bas pour espacer les éléments */
+}
+
+#ou-nous-trouver .container {
+    display: flex;
+    flex-direction: column; /* Disposition verticale pour commencer */
+    align-items: center; /* Alignement central */
+    gap: 20px; /* Espacement entre les éléments */
+}
+
+/* Styles pour les deux div à l'intérieur du conteneur principal */
+#ou-nous-trouver .map-container, #ou-nous-trouver .contact-info {
+    flex: 1;
+    width: 100%; /* Largeur de 100% */
+    background-color: var(--color-lien-telechargement);
+    border-radius: 10px;
+    margin: 10px 0; /* Marge autour des éléments */
+    padding: 20px; /* Padding interne pour l'espace */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre portée */
+}
+
+#ou-nous-trouver .contact-info {
+    color: var(--color-text);
+}
+
+#ou-nous-trouver .contact-info h2 {
+    color: var(--color-primary);
+}
+
+/* Styles pour les liens dans les paragraphes */
+#ou-nous-trouver .contact-info p a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#ou-nous-trouver .contact-info p a:hover {
+    color: #edece5;
+}
+
+/* Media query pour les écrans moyens */
+@media (min-width: 768px) {
+    #ou-nous-trouver .container {
+        flex-direction: row; /* Disposition en ligne pour les écrans moyens et plus */
+        justify-content: space-between; /* Espace entre les éléments */
+        align-items: flex-start; /* Alignement en haut des éléments */
+    }
+
+    #ou-nous-trouver .map-container, #ou-nous-trouver .contact-info {
+        width: 45%; /* Largeur de 45% pour les écrans moyens et plus */
+    }
+}
+
+/* Media query pour les écrans de petite taille */
+@media (max-width: 768px) {
+    #ou-nous-trouver .container {
+        flex-direction: column; /* Disposition verticale pour les petits écrans */
+        align-items: center; /* Alignement central */
+    }
+
+    #ou-nous-trouver .map-container, #ou-nous-trouver .contact-info {
+        width: 100%; /* Largeur de 100% pour les petits écrans */
+        margin: 10px 0; /* Marge autour des éléments */
+    }
+}
+
+iframe {
+    width: 100%;
+    height: 300px; /* Hauteur adaptée pour les petits écrans */
+    border-radius: 10px;
+}
+/* Styles spécifiques pour la section "Où nous trouver" */
+
+
+/* Styles pour le pied de page */
+footer {
+    background-color: var(--color-background);
+    padding: 10px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Conteneur du pied de page */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Style pour les icônes de réseaux sociaux */
+.social-icons a {
+    margin-right: 10px;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Styles pour le paragraphe du pied de page */
+footer p {
+    margin: 0;
+    font-size: 1.1em;
+    color: var(--color-primary);
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Media query pour les petits écrans */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+    }
+
+    .social-icons {
+        margin-bottom: 10px;
+    }
+}
+
+/* Animation de fondu en bas */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Animation de fondu en bas */
+
+/* Animation de fondu en haut */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Animation de fondu en haut */
+
+/* Styles pour personnaliser la barre de défilement de la page */
+::-webkit-scrollbar {
+    width: 12px; /* Largeur de la barre de défilement */
+    height: 12px; /* Hauteur pour les barres de défilements horizontales */
+}
+
+::-webkit-scrollbar-track {
+    background: #8c6d1a; /* Couleur de fond de la piste de la barre de défilement */
+    border-radius: 5px; /* Bordures arrondies pour la piste */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #2a295c; /* Couleur du curseur de la barre de défilement */
+    border-radius: 5px; /* Bordures arrondies pour le curseur */
+    border: 2px solid #185a9d; /* Bordure autour du curseur */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #ffe033;
+}
+/* Styles pour personnaliser la barre de défilement de la page */
+
+/* Travail du CSS pour le responsive design */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px; /* Réduction de la taille de la police pour tout le corps de la page */
+    }
+
+    header {
+        padding: 10px; /* Réduction du padding dans l'en-tête de la page */
+    }
+
+    .header-container h1 {
+        font-size: 1.2em; /* Réduction de la taille du titre principal de la page */
+    }
+
+    section {
+        padding: 20px 10px; /* Réduction du padding dans les sections */
+    }
+
+    section#inscription form input, section#inscription form button {
+        width: 90%; /* Augmentation de la largeur des champs de saisi pour mieux remplir l'espace */
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    header h1 {
+        font-size: 1.4em; /* Ajustement de la taille du titre principal de la page */
+    }
+
+    .logo {
+        height: 50px; /* Réduction de la taille du logo */
+    }
+
+    section {
+        padding: 40px 20px; /* Ajustement du padding */
+    }
+}
+
+
+/* Style pour le bouton de remontée en haut de la page */
+#scrollToTopBtn {
+    display: none; /* Caché par défaut */
+    position: fixed; /* Positionnement fixe */
+    bottom: 60px; /* Placement en bas */
+    right: 30px; /* Placement à droite */
+    z-index: 99; /* Au-dessus des autres éléments */
+    border: none; /* Pas de bordure */
+    outline: none; /* Pas de contour */
+    background-color: var(--color-primary); /* Couleur de fond */
+    color: var(--color-text); /* Couleur du texte */
+    cursor: pointer; /* Curseur main */
+    padding: 15px; /* Padding interne */
+    border-radius: 10px; /* Bordure arrondie */
+    font-size: 18px; /* Taille de la police */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Ombre portée */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transitions pour le fond et la transformation */
+}
+
+/* Style pour le bouton au survol */
+#scrollToTopBtn:hover {
+    background-color: #ffe033; /* Couleur de fond au survol */
+    transform: scale(1.1); /* Agrandissement au survol */
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.5); /* Ombre portée */
+}
+/* Style pour le bouton de remontée en haut de la page */
